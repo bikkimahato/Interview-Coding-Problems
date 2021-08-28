@@ -1,3 +1,6 @@
+//Count Occurrences Of Anagrams
+//Given a word pattern and a text. Return the count of the occurrences of anagrams of the word in the text.
+
 package sliding_window;
 
 public class CountOccurrencesOfAnagrams {
