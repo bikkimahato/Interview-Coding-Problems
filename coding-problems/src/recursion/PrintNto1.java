@@ -1,12 +1,11 @@
-//Print 1 to n
+//Print n to 1
 package recursion;
 
-public class Print1toN {
+public class PrintNto1 {
 
 	public static void main(String[] args) {
 		int n = 7;
 		solve(n);
-
 	}
 
 	private static void solve(int n) {
@@ -16,9 +15,9 @@ public class Print1toN {
 			return;
 		}
 		// Hypothesis
-		solve(n - 1);
-		// Induction
 		System.out.println(n);
+		// Induction
+		solve(n - 1);
 	}
 
 }
