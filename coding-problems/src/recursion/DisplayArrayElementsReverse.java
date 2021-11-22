@@ -10,8 +10,11 @@ public class DisplayArrayElementsReverse {
 	}
 
 	private static void displayArrReverse(int[] arr, int i) {
-		// TODO Auto-generated method stub
-
+		if (arr.length == i) {
+			return;
+		}
+		displayArrReverse(arr, i + 1);
+		System.out.println(arr[i]);
 	}
 
 }
