@@ -83,7 +83,37 @@ public class IterativePrePostAndInorderTraversalsOfBinaryTree {
 	}
 
 	public static void iterativePrePostInTraversal(Node node) {
-		// write your code here
+		Stack<Pair> sc = new Stack<>();
+		Pair rtp = new Pair(node, 1);
+		sc.push(rtp);
+
+		String pre = "";
+		String in = "";
+		String post = "";
+
+		while (!sc.isEmpty()) {
+			Pair p = sc.peek();
+
+			if (p.state == 1) {
+				pre += p.node.data + " ";
+				if (p.node.left != null) {
+					sc.push(new Pair(p.node.left, 1));
+				}
+				p.state++;
+			} else if (p.state == 2) {
+				in += p.node.data + " ";
+				if (p.node.right != null) {
+					sc.push(new Pair(p.node.right, 1));
+				}
+				p.state++;
+			} else {
+				post += p.node.data + " ";
+				sc.pop();
+			}
+		}
+		System.out.println(pre);
+		System.out.println(in);
+		System.out.println(post);
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -103,3 +133,7 @@ public class IterativePrePostAndInorderTraversalsOfBinaryTree {
 		iterativePrePostInTraversal(root);
 	}
 }
+
+//Sample IP
+//19
+//50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
